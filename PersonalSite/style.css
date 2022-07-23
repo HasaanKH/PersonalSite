@@ -1,0 +1,205 @@
+:root {
+    --Blue: #0a192f;
+    --Grey: rgb(186, 177, 185);
+    --Green: #00ffd0;
+}
+body
+{
+    background-color: var(--Blue);
+}
+
+.heading
+{
+    font-family: "NTR", sans-serif;
+    font-size: 46px; /*change into relative values. originally 46px*/
+    display: flex;
+    justify-content: center;
+    top: 100px;
+    position: relative;
+    font-weight: 700;
+    align-items: center;
+}
+
+#typing
+{
+    margin-left: 10px;
+    position: relative;
+    display: inline-block;
+    width: clamp(178px,178px,178px); /*in order to have typing effect align with characters.*/
+}
+
+#typing::after
+{
+    content: "";
+    position: absolute;
+    border-left: 4px solid rgb(186, 177, 185);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background: var(--Blue);
+    animation: typingEffect 1.1s steps(7) forwards,
+    blink 1s steps(24) 1.3s infinite;
+    
+}
+
+@keyframes typingEffect{
+    0%{
+        left: 0%;
+    }
+    100%
+    {
+        left: 100%;
+    }
+}
+
+@keyframes blink
+{
+    from {
+        border-left-color: var(--Grey);
+    }
+    to
+    {
+        border-left-color: rgb(186, 177, 185, 0) ;
+    }
+}
+
+/*Subtitle*/
+
+.subtitle
+{
+    text-align: center;
+    color: rgb(186, 177, 185, 0.6);
+    position: relative;
+    top: 100px;
+    font-size: 15px;
+    font-family: "NTR", sans-serif;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(75px);
+    animation: FadeinUp 1s ease-in-out 1s forwards;
+}
+
+@keyframes FadeinUp {
+    to 
+    {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/*flexbox/main contents*/
+
+.item
+{
+    height: 80vh;
+    width: 70vw; /*below 700px starts to decentre*/
+    color: var(--Grey);
+    background-color: rgba(2, 12, 27, 1.0);
+    margin-bottom: 3vh;
+    text-align: center;
+    position: relative;
+    top: 100px;
+    font-size: 20px;
+    opacity: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    animation: FloatUp 1.2s ease-in-out 1.1s forwards;
+    border-radius: 50px;
+    color: var(--Grey);
+}
+
+.Projects.item 
+{
+    margin-bottom: 20vh;
+}
+
+.flexbox
+{
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+}
+
+@keyframes FloatUp 
+{
+    from
+    {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+}
+
+/*ContactDetails*/
+
+.bubble
+{
+    height: 7vh;
+    width: 7vh;
+    background-color: rgba(2, 12, 27, 0.6);
+    border-radius: 3.5vh;
+    margin: 0.5vh;
+    animation: FadeinRight 1.2s ease-in-out 1.1s forwards;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Contact1.bubble {animation: FadeinRight 1.20s ease-in-out 1.25s forwards;} /*leftmost element*/
+.Contact2.bubble{animation: FadeinRight 1.20s ease-in-out 1.20s forwards;}
+.Contact3.bubble{animation: FadeinRight 1.20s ease-in-out 1.15s forwards;}
+.Contact4.bubble{animation: FadeinRight 1.2s ease-in-out 1.10s forwards;} /*rightmost element*/
+
+.contactdetails 
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 3vh;
+    left: 83vw;
+}
+
+@keyframes FadeinRight 
+{
+    from
+    {
+        transform: translateX(-15vw);
+    }
+    to
+    {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.Contactlinks /*required to center the images on center of anchor tag*/
+{
+    display: flex;
+    height: 7vh;
+    width: 7vh;
+    border-radius: 3.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Text
+{
+    padding: 2%;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400px;
+    font-size: 16px;
+}
+.edulist
+{
+ list-style: none;
+ justify-content: center;   
+}
